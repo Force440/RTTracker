@@ -1,15 +1,21 @@
 import * as C from './core.js';
 const STORAGE='rt-tracker-pwa-v1';
-let entries=[]; let selectedDate=C.isoTodayPacific(); let currentTab='entry'; let historyFilter='';
-const view=document.getElementById('view'); const restoreInput=document.getElementById('restore-input');
+const RECEIPT_DB='rt-tracker-receipts-v1', RECEIPT_STORE='receipts';
+let entries=[]; let receipts={}; let selectedDate=C.isoTodayPacific(); let currentTab='entry'; let historyFilter='';
+const view=document.getElementById('view'); const restoreInput=document.getElementById('restore-input'); const receiptInput=document.getElementById('receipt-input');
 
 function loadStored(){ try{return JSON.parse(localStorage.getItem(STORAGE)||'null');}catch{return null} }
 function persist(){ localStorage.setItem(STORAGE,JSON.stringify(entries)); }
+function openReceiptDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open(RECEIPT_DB,1);req.onupgradeneeded=()=>req.result.createObjectStore(RECEIPT_STORE);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+async function loadReceipts(){const db=await openReceiptDB();return new Promise((resolve,reject)=>{const tx=db.transaction(RECEIPT_STORE,'readonly'),req=tx.objectStore(RECEIPT_STORE).getAll();req.onsuccess=()=>resolve(Object.fromEntries(req.result.map(x=>[x.date,x])));req.onerror=()=>reject(req.error)})}
+async function putReceipt(receipt){const db=await openReceiptDB();return new Promise((resolve,reject)=>{const tx=db.transaction(RECEIPT_STORE,'readwrite');tx.objectStore(RECEIPT_STORE).put(receipt,receipt.date);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}
+async function deleteReceipt(date){const db=await openReceiptDB();return new Promise((resolve,reject)=>{const tx=db.transaction(RECEIPT_STORE,'readwrite');tx.objectStore(RECEIPT_STORE).delete(date);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}
+async function replaceReceipts(next){const db=await openReceiptDB();return new Promise((resolve,reject)=>{const tx=db.transaction(RECEIPT_STORE,'readwrite'),store=tx.objectStore(RECEIPT_STORE);store.clear();Object.values(next).forEach(x=>store.put(x,x.date));tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)})}
 async function init(){
   const saved=loadStored();
   if(Array.isArray(saved)) entries=saved;
   else { entries=await fetch('./seed-data.json').then(r=>r.json()); persist(); }
-  selectedDate=C.isoTodayPacific(); render();
+  receipts=await loadReceipts().catch(()=>({})); selectedDate=C.isoTodayPacific(); render();
   if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
   if(navigator.storage?.persist) navigator.storage.persist().catch(()=>{});
 }
@@ -37,6 +43,12 @@ function renderEntry(){
       <div class="field-row"><label class="field-label" for="method">Check-in method</label><select id="method" class="field"><option value="none">None</option><option value="phone" ${e.checkInMethod==='phone'?'selected':''}>Phone</option><option value="email" ${e.checkInMethod==='email'?'selected':''}>Email</option></select></div>
       <div class="field-row"><label class="field-label" for="status">Day status</label><select id="status" class="field"><option value="normal" ${status==='normal'?'selected':''}>Normal</option><option value="vacation" ${status==='vacation'?'selected':''}>Vacation</option><option value="excused" ${status==='excused'?'selected':''}>Excused</option></select></div>
       <div class="field-row"><label class="field-label" for="is-test">Test completed</label><div class="switch"><input id="is-test" type="checkbox" ${e.isTest?'checked':''}></div></div>
+      <div id="receipt-area" class="receipt-area ${e.isTest?'':'hidden'}">
+        <div class="field-label">Lab receipt</div>
+        ${receipts[selectedDate]?`<button class="receipt-preview" id="view-receipt" aria-label="View receipt for ${selectedDate}"><img src="${receipts[selectedDate].dataUrl}" alt="Lab receipt for ${selectedDate}"></button><div class="receipt-meta">Saved ${new Date(receipts[selectedDate].addedAt).toLocaleString()}</div>`:'<div class="hint">Photograph the receipt so you can confirm this test later.</div>'}
+        <div class="receipt-actions"><button class="btn primary" id="take-receipt">${receipts[selectedDate]?'Replace Photo':'Photograph Receipt'}</button>${receipts[selectedDate]?'<button class="btn" id="remove-receipt">Remove Photo</button>':''}</div>
+        <div class="hint">Saving a photo automatically downloads a Complete Backup containing all entries and receipt photos.</div>
+      </div>
       <div class="field-row"><label class="field-label" for="notes">Notes</label><textarea id="notes" class="field" rows="3">${escapeHTML(e.notes)}</textarea></div>
       ${auto?'<div class="auto-excused">✓ This date is automatically Excused because it is a Sunday or U.S. federal/observed holiday.</div>':''}
     </div>
@@ -50,6 +62,10 @@ function renderEntry(){
   document.getElementById('yesterday').onclick=()=>{const y=C.addDays(today,-1);selectedDate=y<C.PROCESS_START?C.PROCESS_START:y;renderEntry()};
   document.getElementById('today-btn').onclick=()=>{selectedDate=today;renderEntry()};
   ['confirmation','method','status','is-test','notes'].forEach(id=>document.getElementById(id).addEventListener(id==='confirmation'||id==='notes'?'input':'change',saveEntryFromForm));
+  document.getElementById('is-test').addEventListener('change',renderEntry);
+  document.getElementById('take-receipt')?.addEventListener('click',()=>receiptInput.click());
+  document.getElementById('view-receipt')?.addEventListener('click',()=>showReceipt(selectedDate));
+  document.getElementById('remove-receipt')?.addEventListener('click',removeCurrentReceipt);
 }
 function saveEntryFromForm(){
   const auto=C.isAutoExcused(selectedDate); let status=document.getElementById('status').value;
@@ -84,20 +100,27 @@ function renderHistory(){
   document.getElementById('history-search').oninput=e=>{historyFilter=e.target.value;renderHistory()};
   document.querySelectorAll('.history-item').forEach(b=>b.onclick=()=>openEditor(b.dataset.date));
 }
-function historyItem(e){const rs=C.resolvedStatus(e);return `<button class="history-item" data-date="${e.date}"><div class="history-head"><span>${C.displayDate(e.date)}</span>${e.isTest?'<span class="chip">Test ✓</span>':''}</div><div class="chips">${e.confirmationNumber?`<span class="chip"># ${escapeHTML(e.confirmationNumber)}</span>`:''}${e.checkInMethod!=='none'?`<span class="chip">${e.checkInMethod==='phone'?'Phone':'Email'}</span>`:''}${rs!=='normal'?`<span class="chip">${cap(rs)}</span>`:''}</div>${e.notes?`<div class="notes">${escapeHTML(e.notes)}</div>`:''}</button>`}
+function historyItem(e){const rs=C.resolvedStatus(e);return `<button class="history-item" data-date="${e.date}"><div class="history-head"><span>${C.displayDate(e.date)}</span>${e.isTest?'<span class="chip">Test ✓</span>':''}${receipts[e.date]?'<span class="chip">Receipt 📷</span>':''}</div><div class="chips">${e.confirmationNumber?`<span class="chip"># ${escapeHTML(e.confirmationNumber)}</span>`:''}${e.checkInMethod!=='none'?`<span class="chip">${e.checkInMethod==='phone'?'Phone':'Email'}</span>`:''}${rs!=='normal'?`<span class="chip">${cap(rs)}</span>`:''}</div>${e.notes?`<div class="notes">${escapeHTML(e.notes)}</div>`:''}</button>`}
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
 function openEditor(date){selectedDate=date;currentTab='entry';render();window.scrollTo(0,0)}
 
 function renderAudit(){const today=C.isoTodayPacific(), weekly=C.weeklyAudits(entries,today).reverse(), monthly=C.monthlyAudits(entries,today).reverse();view.innerHTML=`<div class="toolbar"><h2>Compliance Audit</h2></div><div class="card"><h3 class="card-title">Weekly</h3>${weekly.map(a=>`<div class="audit-row"><div><div class="audit-main">${C.displayDate(a.start,{short:true})} – ${C.displayDate(a.end,{short:true})}</div>${a.reason?`<div class="audit-reason">${a.reason}</div>`:''}</div>${statusBadge(a.status)}</div>`).join('')}</div><div class="card"><h3 class="card-title">Monthly Phone</h3>${monthly.map(a=>`<div class="audit-row"><div><div class="audit-main">${C.monthYear(a.month)}</div><div class="audit-reason">${a.phoneCount} phone check-in${a.phoneCount===1?'':'s'}</div></div>${statusBadge(a.status)}</div>`).join('')}</div>`}
 
-function renderMore(){const standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;view.innerHTML=`<div class="toolbar"><h2>More</h2></div>${!standalone?'<div class="install-banner"><strong>Install on iPhone:</strong> Open this site in Safari → tap Share → <strong>Add to Home Screen</strong> → turn on <strong>Open as Web App</strong> if shown → Add.</div>':''}<div class="card"><h3 class="card-title">Backup / Restore</h3><div class="two-buttons"><button class="btn primary" id="backup">Full Backup</button><button class="btn" id="restore">Restore Backup</button><button class="btn" id="csv">CSV Export</button><button class="btn" id="reset-seed">Reset to Seed</button></div><div class="file-note">Full Backup is the restorable backup. Save it to iCloud Drive periodically. You can also import the JSON backup created by the native RT Tracker app.</div></div><div class="card"><h3 class="card-title">About</h3><div class="row"><div class="label">Time zone</div><div class="value">Pacific</div></div><div class="row"><div class="label">Process start</div><div class="value">Mar 24, 2026</div></div><div class="row"><div class="label">Storage</div><div class="value">On this device</div></div></div>`;
+function renderMore(){const standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;view.innerHTML=`<div class="toolbar"><h2>More</h2></div>${!standalone?'<div class="install-banner"><strong>Install on iPhone:</strong> Open this site in Safari → tap Share → <strong>Add to Home Screen</strong> → turn on <strong>Open as Web App</strong> if shown → Add.</div>':''}<div class="card"><h3 class="card-title">Backup / Restore</h3><div class="two-buttons"><button class="btn primary" id="backup">Export Complete Backup</button><button class="btn" id="restore">Restore Backup</button><button class="btn" id="csv">CSV Export</button><button class="btn" id="reset-seed">Reset to Seed</button></div><div class="file-note">Complete Backup includes all entries and receipt photos. A new Complete Backup downloads automatically whenever a receipt photo is saved. Older RT Tracker JSON backups remain supported.</div></div><div class="card"><h3 class="card-title">About</h3><div class="row"><div class="label">Time zone</div><div class="value">Pacific</div></div><div class="row"><div class="label">Process start</div><div class="value">Mar 24, 2026</div></div><div class="row"><div class="label">Receipt photos</div><div class="value">${Object.keys(receipts).length}</div></div><div class="row"><div class="label">Storage</div><div class="value">On this device</div></div></div>`;
   document.getElementById('backup').onclick=downloadBackup; document.getElementById('restore').onclick=()=>restoreInput.click(); document.getElementById('csv').onclick=downloadCSV; document.getElementById('reset-seed').onclick=resetSeed;
 }
 function download(name,data,type){const blob=new Blob([data],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
-function downloadBackup(){const today=C.isoTodayPacific();download(`RT-Tracker-Backup-${today}.json`,JSON.stringify(entries,null,2),'application/json');}
+function backupPayload(){return {format:'rt-tracker-complete-backup',version:2,exportedAt:new Date().toISOString(),entries,receipts:Object.values(receipts)}}
+function downloadBackup(){const today=C.isoTodayPacific();download(`RT-Tracker-Complete-Backup-${today}.json`,JSON.stringify(backupPayload()),'application/json');}
 function csvEscape(s){s=String(s??'');return /[",\n]/.test(s)?`"${s.replaceAll('"','""')}"`:s}
 function downloadCSV(){const rows=[['Date','Confirmation','Test','Check-in Method','Day Status','Notes'],...C.sorted(entries).map(e=>[e.date,e.confirmationNumber,e.isTest?'Test':'',cap(e.checkInMethod),cap(C.resolvedStatus(e)),e.notes])];download('RT-Tracker-Export.csv',rows.map(r=>r.map(csvEscape).join(',')).join('\n'),'text/csv');}
 async function resetSeed(){if(!confirm('Reset all data to the original imported history? This replaces current PWA data.'))return;entries=await fetch('./seed-data.json').then(r=>r.json());persist();toast('Reset complete');renderMore();}
-restoreInput.onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const data=JSON.parse(await f.text());if(!Array.isArray(data)||!data.every(x=>x.date))throw new Error('Invalid backup');entries=C.sorted(data.map(x=>({date:x.date,confirmationNumber:x.confirmationNumber||'',isTest:!!x.isTest,checkInMethod:(x.checkInMethod||'none').toLowerCase(),dayStatus:(x.dayStatus||'normal').toLowerCase(),notes:x.notes||''})));persist();toast('Backup restored');render();}catch(err){alert('Could not restore this backup. '+err.message)}finally{restoreInput.value=''}};
+function normalizedEntries(data){if(!Array.isArray(data)||!data.every(x=>x.date))throw new Error('Invalid backup');return C.sorted(data.map(x=>({date:x.date,confirmationNumber:x.confirmationNumber||'',isTest:!!x.isTest,checkInMethod:(x.checkInMethod||'none').toLowerCase(),dayStatus:(x.dayStatus||'normal').toLowerCase(),notes:x.notes||''})))}
+restoreInput.onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const data=JSON.parse(await f.text()),incomingEntries=Array.isArray(data)?data:data.entries;entries=normalizedEntries(incomingEntries);if(!Array.isArray(data)&&data.format==='rt-tracker-complete-backup'){receipts=Object.fromEntries((data.receipts||[]).filter(x=>x.date&&x.dataUrl).map(x=>[x.date,x]));await replaceReceipts(receipts)}persist();toast('Backup restored');render();}catch(err){alert('Could not restore this backup. '+err.message)}finally{restoreInput.value=''}};
+
+async function compressPhoto(file){const source=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error);reader.readAsDataURL(file)}),img=await new Promise((resolve,reject)=>{const el=new Image();el.onload=()=>resolve(el);el.onerror=()=>reject(new Error('The selected file is not a readable image.'));el.src=source}),max=1600,scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight)),canvas=document.createElement('canvas');canvas.width=Math.round(img.naturalWidth*scale);canvas.height=Math.round(img.naturalHeight*scale);canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);return canvas.toDataURL('image/jpeg',0.8)}
+receiptInput.onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{toast('Saving receipt…');const receipt={date:selectedDate,dataUrl:await compressPhoto(file),addedAt:new Date().toISOString()};await putReceipt(receipt);receipts[selectedDate]=receipt;const entry=C.entryFor(entries,selectedDate);if(!entry.isTest){entries=C.upsert(entries,{...entry,isTest:true});persist()}downloadBackup();toast('Receipt saved; backup downloaded');renderEntry()}catch(err){alert('Could not save this receipt. '+err.message)}finally{receiptInput.value=''}};
+async function removeCurrentReceipt(){if(!confirm('Remove this receipt photo? This cannot be undone unless it is in a Complete Backup.'))return;await deleteReceipt(selectedDate);delete receipts[selectedDate];toast('Receipt removed');renderEntry()}
+function showReceipt(date){const receipt=receipts[date];if(!receipt)return;const w=window.open('','_blank');if(w){w.document.write(`<title>RT Tracker receipt ${escapeHTML(date)}</title><meta name="viewport" content="width=device-width"><style>body{margin:0;background:#111;display:grid;place-items:center;min-height:100vh}img{max-width:100%;height:auto}</style><img src="${receipt.dataUrl}" alt="Lab receipt for ${escapeHTML(date)}">`);w.document.close()}}
 
 init();

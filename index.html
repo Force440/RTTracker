@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#123d73" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="RT Tracker" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>RT Tracker</title>
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <div class="brand-row">
+        <img src="icons/icon-192.png" alt="" class="brand-icon" />
+        <div>
+          <h1>RT Tracker</h1>
+          <div class="subtitle">Pacific Time</div>
+        </div>
+      </div>
+    </header>
+
+    <main id="view" class="view"></main>
+
+    <nav class="tabbar" aria-label="Main navigation">
+      <button data-tab="entry" class="tab active"><span class="tab-icon">✎</span><span>Entry</span></button>
+      <button data-tab="dashboard" class="tab"><span class="tab-icon">◉</span><span>Dashboard</span></button>
+      <button data-tab="history" class="tab"><span class="tab-icon">↺</span><span>History</span></button>
+      <button data-tab="audit" class="tab"><span class="tab-icon">✓</span><span>Audit</span></button>
+      <button data-tab="more" class="tab"><span class="tab-icon">•••</span><span>More</span></button>
+    </nav>
+  </div>
+  <input type="file" id="restore-input" accept="application/json,.json" hidden />
+  <script type="module" src="app.js"></script>
+</body>
+</html>

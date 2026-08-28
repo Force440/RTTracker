@@ -1,0 +1,1138 @@
+[
+  {
+    "date": "2026-03-24",
+    "confirmationNumber": "801110",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-03-25",
+    "confirmationNumber": "117570",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-03-26",
+    "confirmationNumber": "117570",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-03-27",
+    "confirmationNumber": "423224",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-03-28",
+    "confirmationNumber": "195522",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-03-29",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-03-30",
+    "confirmationNumber": "308804",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-03-31",
+    "confirmationNumber": "722822",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-01",
+    "confirmationNumber": "141022",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone call\u00a0 \u2705 in\u00a0"
+  },
+  {
+    "date": "2026-04-02",
+    "confirmationNumber": "742562",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-03",
+    "confirmationNumber": "215796",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-04",
+    "confirmationNumber": "675816",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-05",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-06",
+    "confirmationNumber": "989466",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone call \u2705 in"
+  },
+  {
+    "date": "2026-04-07",
+    "confirmationNumber": "554036",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-08",
+    "confirmationNumber": "126970",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-09",
+    "confirmationNumber": "545170",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-10",
+    "confirmationNumber": "210108",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-11",
+    "confirmationNumber": "653400",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-12",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-13",
+    "confirmationNumber": "780200",
+    "isTest": true,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone call \u2705 in"
+  },
+  {
+    "date": "2026-04-14",
+    "confirmationNumber": "456344",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-15",
+    "confirmationNumber": "891998",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-16",
+    "confirmationNumber": "272652",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-17",
+    "confirmationNumber": "NR",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-18",
+    "confirmationNumber": "509706",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-19",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-20",
+    "confirmationNumber": "884750",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-21",
+    "confirmationNumber": "120278",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705 in"
+  },
+  {
+    "date": "2026-04-22",
+    "confirmationNumber": "693212",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-23",
+    "confirmationNumber": "541248",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-24",
+    "confirmationNumber": "997996",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-25",
+    "confirmationNumber": "713118",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-26",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-27",
+    "confirmationNumber": "959856",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-28",
+    "confirmationNumber": "378056",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-04-29",
+    "confirmationNumber": "829712",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-04-30",
+    "confirmationNumber": "830384",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-01",
+    "confirmationNumber": "820846",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-02",
+    "confirmationNumber": "280866",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-03",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-04",
+    "confirmationNumber": "540150",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": "Group Meeting"
+  },
+  {
+    "date": "2026-05-05",
+    "confirmationNumber": "750590",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-06",
+    "confirmationNumber": "489464",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-05-07",
+    "confirmationNumber": "133492",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-08",
+    "confirmationNumber": "685516",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-09",
+    "confirmationNumber": "120444",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-10",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": "Group"
+  },
+  {
+    "date": "2026-05-11",
+    "confirmationNumber": "371364",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-12",
+    "confirmationNumber": "777018",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-13",
+    "confirmationNumber": "216128",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-05-14",
+    "confirmationNumber": "Vacation 258952",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-15",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-16",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-17",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-18",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-19",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-20",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-21",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-22",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-23",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "vacation",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-24",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-25",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-26",
+    "confirmationNumber": "",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-27",
+    "confirmationNumber": "Vacation",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "vacation",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-05-28",
+    "confirmationNumber": "842930",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-29",
+    "confirmationNumber": "198728",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-30",
+    "confirmationNumber": "654566",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-05-31",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-01",
+    "confirmationNumber": "951488",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": "Group"
+  },
+  {
+    "date": "2026-06-02",
+    "confirmationNumber": "378052",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-06-03",
+    "confirmationNumber": "880568",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-04",
+    "confirmationNumber": "477918",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-05",
+    "confirmationNumber": "933756",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-06",
+    "confirmationNumber": "406322",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-07",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-08",
+    "confirmationNumber": "653060",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": "Group"
+  },
+  {
+    "date": "2026-06-09",
+    "confirmationNumber": "196352",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-10",
+    "confirmationNumber": "552190",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-06-11",
+    "confirmationNumber": "813656",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-12",
+    "confirmationNumber": "764970",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-13",
+    "confirmationNumber": "542822",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-14",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-15",
+    "confirmationNumber": "802106",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-16",
+    "confirmationNumber": "199396",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-17",
+    "confirmationNumber": "855970",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-06-18",
+    "confirmationNumber": "428568",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-19",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-20",
+    "confirmationNumber": "758108",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-21",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-22",
+    "confirmationNumber": "100664",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-06-23",
+    "confirmationNumber": "776018",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-24",
+    "confirmationNumber": "828700",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-25",
+    "confirmationNumber": "435090",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-26",
+    "confirmationNumber": "953658",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-27",
+    "confirmationNumber": "376040",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-28",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-29",
+    "confirmationNumber": "639506",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-06-30",
+    "confirmationNumber": "182798",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-01",
+    "confirmationNumber": "517726",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-02",
+    "confirmationNumber": "354126",
+    "isTest": false,
+    "checkInMethod": "email",
+    "dayStatus": "normal",
+    "notes": "Email \u2705"
+  },
+  {
+    "date": "2026-07-03",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-04",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-05",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-06",
+    "confirmationNumber": "742550",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-07",
+    "confirmationNumber": "273664",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-07-08",
+    "confirmationNumber": "876386",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-09",
+    "confirmationNumber": "340074",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-10",
+    "confirmationNumber": "787548",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-11",
+    "confirmationNumber": "498488",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-12",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-13",
+    "confirmationNumber": "770318",
+    "isTest": false,
+    "checkInMethod": "email",
+    "dayStatus": "normal",
+    "notes": "Email\u00a0 \u2705\u00a0"
+  },
+  {
+    "date": "2026-07-14",
+    "confirmationNumber": "201064",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-15",
+    "confirmationNumber": "686176",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-16",
+    "confirmationNumber": "142014",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-17",
+    "confirmationNumber": "668946",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-18",
+    "confirmationNumber": "321338",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-19",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-20",
+    "confirmationNumber": "584804",
+    "isTest": false,
+    "checkInMethod": "email",
+    "dayStatus": "normal",
+    "notes": "Email \u2705"
+  },
+  {
+    "date": "2026-07-21",
+    "confirmationNumber": "750926",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-22",
+    "confirmationNumber": "550846",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-23",
+    "confirmationNumber": "253422",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-24",
+    "confirmationNumber": "859812",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-25",
+    "confirmationNumber": "641846",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-26",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-27",
+    "confirmationNumber": "114044",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-07-28",
+    "confirmationNumber": "809474",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-29",
+    "confirmationNumber": "904810",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-30",
+    "confirmationNumber": "398296",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-07-31",
+    "confirmationNumber": "820668",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-01",
+    "confirmationNumber": "414512",
+    "isTest": false,
+    "checkInMethod": "phone",
+    "dayStatus": "normal",
+    "notes": "Phone \u2705"
+  },
+  {
+    "date": "2026-08-02",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-03",
+    "confirmationNumber": "784382",
+    "isTest": true,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-04",
+    "confirmationNumber": "91996",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-05",
+    "confirmationNumber": "531106",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-06",
+    "confirmationNumber": "834566",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-07",
+    "confirmationNumber": "944622",
+    "isTest": true,
+    "checkInMethod": "email",
+    "dayStatus": "normal",
+    "notes": "Email \u2705"
+  },
+  {
+    "date": "2026-08-08",
+    "confirmationNumber": "781022",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-09",
+    "confirmationNumber": "N/A",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "excused",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-10",
+    "confirmationNumber": "111032",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-11",
+    "confirmationNumber": "",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  },
+  {
+    "date": "2026-08-12",
+    "confirmationNumber": "",
+    "isTest": false,
+    "checkInMethod": "none",
+    "dayStatus": "normal",
+    "notes": ""
+  }
+]
